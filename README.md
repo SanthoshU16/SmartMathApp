@@ -2,8 +2,7 @@
 
 Mathematical Assistant — Fibonacci Curve Visualizer
 
-A **Spring Boot 3.2.3** web app that generates and visualizes Fibonacci spirals with an **interactive, responsive web interface**.
-
+A Spring Boot 3.2.3 web application that performs mathematical operations and dynamically generates and visualizes Fibonacci sequence spirals through an interactive, responsive web interface.
 ---
 
 ## 📘 Overview
