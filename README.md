@@ -1,6 +1,6 @@
-# SmartMathApp
+#🧠 SmartMathApp
 
-# 🌀 Fibonacci Curve Web Application
+Mathematical Assistant — Fibonacci Curve Visualizer
 
 A **Spring Boot 3.2.3** web app that generates and visualizes Fibonacci spirals with an **interactive, responsive web interface**.
 
