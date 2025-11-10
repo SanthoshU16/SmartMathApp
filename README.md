@@ -8,7 +8,7 @@ Mathematical Assistant — Fibonacci Curve Visualizer
 **Version:** 1.0.0
 **Tech Stack:** Java 17 · Spring Boot · JSP · Maven · Docker
 
-This application visualizes the Fibonacci sequence and golden spiral in real-time. Users can generate up to **1000 terms**, view animated spirals, and explore mathematical patterns via a clean UI.
+This application performs advanced mathematical operations and visualizes the Fibonacci sequence and golden spiral in real-time. Users can generate up to 1000 terms, view animated spirals, and explore mathematical patterns through an interactive and responsive web interface.
 
 ---
 
