@@ -1,4 +1,4 @@
-#🧠 SmartMathApp
+# 🧠 SmartMathApp
 
 Mathematical Assistant — Fibonacci Curve Visualizer
 
