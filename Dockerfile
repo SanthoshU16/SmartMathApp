@@ -1,19 +1,24 @@
-# Multi-stage build for Spring Boot
+# Multi-stage build for Spring Boot (WAR-based web app)
 FROM maven:3.9.8-eclipse-temurin-17 AS builder
 WORKDIR /app
 
-# Copy the root pom.xml and the source folder
+# Copy the Maven config and source
 COPY pom.xml .
-COPY MathAssistant/src ./src
+COPY src ./src
 
-RUN mvn -DskipTests package
+# Build the WAR file (skip tests)
+RUN mvn clean package -DskipTests
 
+# Runtime stage
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 
-COPY --from=builder /app/target/*.jar app.jar
+# Copy the built WAR
+COPY --from=builder /app/target/*.war app.war
 
+# Render provides PORT dynamically
 ENV PORT=10000
 EXPOSE 10000
 
-CMD ["sh", "-c", "java -Dserver.port=${PORT:-10000} -jar /app/app.jar"]
+# Run the app on Render’s assigned port
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-10000} -jar /app/app.war"]
