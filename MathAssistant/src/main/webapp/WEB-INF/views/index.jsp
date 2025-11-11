@@ -212,6 +212,10 @@ body {
   color: #1e3a8a;
   font-weight: 500;
   box-shadow: inset 0 0 8px rgba(37,99,235,0.08);
+  /* Make input wider and responsive on small screens */
+  min-width: 120px;
+  width: 140px;
+  text-align: center;
 }
 .fib-controls input:focus {
   border-color: #2563eb;
@@ -293,8 +297,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const params = new URLSearchParams(window.location.search);
   const modeParam = params.get('mode');
-  const path = window.location.pathname || '';
-  if (path.endsWith('/calculator') || modeParam === 'calc') showMode('calc');
+  // Default to Fibonacci view unless explicitly requested via ?mode=calc
+  if (modeParam === 'calc') showMode('calc');
   else showMode('fib');
 
 
