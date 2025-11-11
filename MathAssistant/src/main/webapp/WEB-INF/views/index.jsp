@@ -274,29 +274,6 @@ body {
     width: 55px;
   }
 }
-
-@media (max-width: 768px) {
-  .header {
-    position: relative; 
-    padding: 15px 10px;
-    text-align: center;
-  }
-
-  .container {
-    margin-top: 20px;
-    padding: 10px;
-    width: 95%;
-  }
-
-  button, input, select {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  h1, h2 {
-    font-size: 1.3em;
-  }
-}
 </style>
 
 <script>
@@ -320,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const params = new URLSearchParams(window.location.search);
   const modeParam = params.get('mode');
-  
+  // Default to Fibonacci view unless explicitly requested via ?mode=calc
   if (modeParam === 'calc') showMode('calc');
   else showMode('fib');
 
