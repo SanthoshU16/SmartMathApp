@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>🧮 Smart Math App — Ultra Edition</title>
+<title>🧠 Smart Math App — Ultra Edition</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
@@ -13,6 +13,7 @@
   transition: all 0.25s ease;
 }
 
+/* 🌈 Animated background */
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
@@ -34,7 +35,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-
+/* 🌟 Header */
 .header {
   width: 100%;
   display: flex;
@@ -73,7 +74,7 @@ body {
   transform: translateY(-2px);
 }
 
-
+/* 🔘 Mode Dropdown */
 .mode-select {
   position: absolute;
   right: 40px;
@@ -115,7 +116,7 @@ body {
 }
 .dropdown.show { display: block; }
 
-
+/* ⚙️ Container */
 .container {
   width: 100%;
   max-width: 1000px;
@@ -126,7 +127,7 @@ body {
   margin-top: 120px;
 }
 
-
+/* 🧮 Calculator Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -173,7 +174,7 @@ body {
   background: linear-gradient(145deg,#eff6ff,#dbeafe);
 }
 
-
+/* 🌀 Fibonacci Section */
 .fib-area {
   width: 100%;
   max-width: 850px;
@@ -212,10 +213,6 @@ body {
   color: #1e3a8a;
   font-weight: 500;
   box-shadow: inset 0 0 8px rgba(37,99,235,0.08);
-  /* Make input wider and responsive on small screens */
-  min-width: 120px;
-  width: 140px;
-  text-align: center;
 }
 .fib-controls input:focus {
   border-color: #2563eb;
@@ -297,11 +294,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const params = new URLSearchParams(window.location.search);
   const modeParam = params.get('mode');
-  // Default to Fibonacci view unless explicitly requested via ?mode=calc
-  if (modeParam === 'calc') showMode('calc');
+  const path = window.location.pathname || '';
+  if (path.endsWith('/calculator') || modeParam === 'calc') showMode('calc');
   else showMode('fib');
 
-
+  // Fibonacci logic
   const img = document.getElementById('fibImg');
   const placeholder = document.getElementById('fibPlaceholder');
   img.style.display = 'none';
@@ -319,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function(){
     placeholder.style.display = 'none';
   });
 
-  
+  // Calculator logic
   const display = document.getElementById('calcDisplay');
   document.querySelectorAll('.calc-btn').forEach(b=>{
     b.addEventListener('click', ()=>{
@@ -351,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 <div class="container">
-  
+  <!-- 🧮 Calculator -->
   <div id="calculator" class="grid" style="display:none">
     <div class="display" style="grid-column:1 / -1"><input id="calcDisplay" placeholder="0"></div>
     <div class="btn-card calc-btn" data-value="C">C</div>
@@ -374,11 +371,11 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="btn-card calc-btn" data-value=".">.</div>
   </div>
 
- 
+  <!-- 🌀 Fibonacci Curve -->
   <div id="fibonacci" class="fib-area">
     <div class="fib-controls">
       <label>Enter Fibonacci terms:</label>
-      <input id="terms" type="number" min="1" max="1000" placeholder="" />
+      <input id="terms" type="number" min="1" max="1000" placeholder="e.g., 8" />
       <button id="drawBtn">Draw Curve</button>
     </div>
     <div class="fib-canvas">
