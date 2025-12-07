@@ -1,6 +1,7 @@
 # 🧠 SmartMathApp
 
 Mathematical Assistant — Fibonacci Curve Visualizer
+Explore it ---"https://smartmathapp.onrender.com/"
 
 ## 📘 Overview
 
